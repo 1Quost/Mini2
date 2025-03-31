@@ -37,7 +37,7 @@
             </children></AnchorPane>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
             <children>
-                <Button layoutX="11.0" layoutY="34.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="273.0" text="Employees Management" textFill="#3f0a84">
+                <Button layoutX="11.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleable" prefHeight="43.0" prefWidth="273.0" text="Employees Management" textFill="#3f0a84">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -61,7 +61,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="11.0" layoutY="253.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="273.0" text="Technology Providers" textFill="#3f0a84">
+                <Button layoutX="11.0" layoutY="253.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="273.0" text="Reservation Managagement" textFill="#3f0a84">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>

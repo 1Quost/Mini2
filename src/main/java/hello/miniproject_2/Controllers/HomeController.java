@@ -1,5 +1,6 @@
 package hello.miniproject_2.Controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -8,8 +9,8 @@ import java.io.IOException;
 
 public class HomeController {
     @FXML
-    private void openEmployeeManagement() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/miniproject2_final/miniproject2/views/EmployeeView.fxml"));
+    private void handleable() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hello/miniproject_2/views/EmployeeView.fxml"));
         Stage stage = new Stage();
         stage.setTitle("Employee Management");
         stage.setScene(new Scene(loader.load()));
@@ -45,4 +46,13 @@ public class HomeController {
     }
 
 
-}
+
+
+    }
+
+
+
+
+
+
+

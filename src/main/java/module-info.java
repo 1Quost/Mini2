@@ -7,4 +7,5 @@ module hello.miniproject_2 {
 
     // Add this opens directive for FXML injection
     opens hello.miniproject_2.Controllers to javafx.fxml;
+
 }

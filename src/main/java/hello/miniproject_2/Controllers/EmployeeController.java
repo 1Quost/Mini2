@@ -7,13 +7,13 @@ import javafx.scene.control.*;
 
 public class EmployeeController {
     @FXML private TableView<EmployeeModel> employeeTable;
-    @FXML private TableColumn<EmployeeModel, String> idCol, nameCol, gencol, posCol;
-    @FXML private TableColumn<EmployeeModel, Number> ageCol, salcol;
+    @FXML private TableColumn<EmployeeModel, String> idCol, nameCol, genCol, posCol;
+    @FXML private TableColumn<EmployeeModel, Number> ageCol, salCol;
     @FXML private TextField idField, nameField;
-    @FXML private RadioButton r1Field, r2Field;
+    @FXML private RadioButton maleRadio, femaleRadio;
     @FXML private Spinner<Integer> ageSpinner;
-    @FXML private Slider salSli;
-    @FXML private CheckBox hostCheck, chefCheck, deliveryCheck, waiterCheck, managerCheck;
+    @FXML private Slider salSlider;
+    @FXML private CheckBox waiterCheck, chefCheck, deliveryCheck, hostCheck, managerCheck;
     @FXML private Label errorMsg;
     @FXML private ToggleGroup genderGroup;
 
@@ -24,13 +24,18 @@ public class EmployeeController {
         // Initialize spinner
         ageSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(18, 70, 25));
 
+        // Initialize gender radio buttons
+        maleRadio.setToggleGroup(genderGroup);
+        femaleRadio.setToggleGroup(genderGroup);
+        maleRadio.setSelected(true);
+
         // Bind columns to EmployeeModel properties
         idCol.setCellValueFactory(cellData -> cellData.getValue().idProperty());
         nameCol.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         posCol.setCellValueFactory(cellData -> cellData.getValue().positionProperty());
         ageCol.setCellValueFactory(cellData -> cellData.getValue().ageProperty());
-        gencol.setCellValueFactory(cellData -> cellData.getValue().genderProperty());
-        salcol.setCellValueFactory(cellData -> cellData.getValue().salaryProperty());
+        genCol.setCellValueFactory(cellData -> cellData.getValue().genderProperty());
+        salCol.setCellValueFactory(cellData -> cellData.getValue().salaryProperty());
         employeeTable.setItems(employeeStore.getEmployees());
 
         // Auto-fill fields when a row is selected
@@ -39,13 +44,13 @@ public class EmployeeController {
                 idField.setText(newVal.getId());
                 nameField.setText(newVal.getName());
                 ageSpinner.getValueFactory().setValue(newVal.getAge());
-                salSli.setValue(newVal.getSalary());
+                salSlider.setValue(newVal.getSalary());
 
                 // Set gender radio button
                 if (newVal.getGender().equals("M")) {
-                    r1Field.setSelected(true);
+                    maleRadio.setSelected(true);
                 } else {
-                    r2Field.setSelected(true);
+                    femaleRadio.setSelected(true);
                 }
 
                 // Set position checkboxes
@@ -63,21 +68,30 @@ public class EmployeeController {
     private void addEmployee() {
         try {
             String position = getSelectedPosition();
-            String gender = r1Field.isSelected() ? "M" : "F";
+            if (position.isEmpty()) {
+                errorMsg.setText("Please select a position!");
+                return;
+            }
 
+            if (idField.getText().isEmpty() || nameField.getText().isEmpty()) {
+                errorMsg.setText("ID and Name are required!");
+                return;
+            }
+
+            String gender = maleRadio.isSelected() ? "M" : "F";
             EmployeeModel emp = new EmployeeModel(
                     idField.getText(),
                     nameField.getText(),
                     position,
                     ageSpinner.getValue(),
-                    (int) salSli.getValue(),
+                    (int) salSlider.getValue(),
                     gender
             );
 
             employeeStore.addEmployee(emp);
             clearFields();
         } catch (Exception e) {
-            errorMsg.setText("Please fill all fields correctly!");
+            errorMsg.setText("Error adding employee: " + e.getMessage());
         }
     }
 
@@ -87,19 +101,25 @@ public class EmployeeController {
         if (selected != null) {
             try {
                 String position = getSelectedPosition();
-                String gender = r1Field.isSelected() ? "M" : "F";
+                if (position.isEmpty()) {
+                    errorMsg.setText("Please select a position!");
+                    return;
+                }
 
+                String gender = maleRadio.isSelected() ? "M" : "F";
                 selected.setName(nameField.getText());
                 selected.setPosition(position);
                 selected.setAge(ageSpinner.getValue());
-                selected.setSalary((int) salSli.getValue());
+                selected.setSalary((int) salSlider.getValue());
                 selected.setGender(gender);
 
                 employeeTable.refresh();
                 clearFields();
             } catch (Exception e) {
-                errorMsg.setText("Error updating employee!");
+                errorMsg.setText("Error updating employee: " + e.getMessage());
             }
+        } else {
+            errorMsg.setText("Please select an employee to update!");
         }
     }
 
@@ -109,6 +129,8 @@ public class EmployeeController {
         if (selected != null) {
             employeeStore.deleteEmployee(selected);
             clearFields();
+        } else {
+            errorMsg.setText("Please select an employee to delete!");
         }
     }
 
@@ -125,7 +147,8 @@ public class EmployeeController {
         idField.clear();
         nameField.clear();
         ageSpinner.getValueFactory().setValue(25);
-        salSli.setValue(200);
+        salSlider.setValue(200);
+        maleRadio.setSelected(true);
         waiterCheck.setSelected(false);
         chefCheck.setSelected(false);
         deliveryCheck.setSelected(false);
