@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1067.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hello.miniproject_2.Controllers.ClientController">
+    <GridPane prefHeight="513.0" prefWidth="630.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="514.4" minHeight="10.0" prefHeight="514.4" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="170.40000000000003" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="88.40000000000003" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+            <TableView fx:id="clientTable" prefHeight="539.0" prefWidth="476.0" GridPane.columnIndex="1">
+                <columns>
+                    <TableColumn fx:id="nameCol" prefWidth="73.60003662109375" text="Name" />
+                    <TableColumn fx:id="genCol" prefWidth="50.39996337890625" text="Gender" />
+                    <TableColumn fx:id="nationalityCol" prefWidth="87.20001220703125" text="Nationality" />
+                    <TableColumn fx:id="allergyCol" prefWidth="112.79998779296875" text="Allergy" />
+                    <TableColumn fx:id="paymentCol" prefWidth="93.5999755859375" text="Payment" />
+                    <TableColumn fx:id="telCol" minWidth="0.0" prefWidth="112.79995727539062" text="Tel" />
+                </columns>
+            </TableView>
+            <VBox prefHeight="521.0" prefWidth="504.0">
+                <children>
+                    <Label contentDisplay="CENTER" text="Clients" textFill="#1f127b">
+                        <font>
+                            <Font name="Tw Cen MT Condensed Extra Bold" size="53.0" />
+                        </font>
+                  <VBox.margin>
+                     <Insets left="170.0" />
+                  </VBox.margin>
+                    </Label>
+                    <ImageView fitHeight="185.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <VBox.margin>
+                            <Insets bottom="30.0" left="140.0" top="10.0" />
+                        </VBox.margin>
+                        <image>
+                            <Image url="@../image/Clients.png" />
+                        </image>
+                    </ImageView>
+                    <HBox prefHeight="302.0" prefWidth="488.0">
+                        <children>
+                            <GridPane prefHeight="100.0" prefWidth="479.0" vgap="25.0">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <Label alignment="CENTER" text="Nationality" GridPane.rowIndex="2">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+                                    <TextField fx:id="nameField" promptText="Name" GridPane.columnIndex="1" />
+                                    <Label text="Name:">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Alergy:" GridPane.rowIndex="3">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Payment method:" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                        <GridPane.margin>
+                                            <Insets bottom="25.0" />
+                                        </GridPane.margin>
+                                    </Label>
+                                    <CheckBox fx:id="cardCheck" mnemonicParsing="false" text="Card" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <GridPane.margin>
+                                 <Insets left="15.0" />
+                              </GridPane.margin></CheckBox>
+                                    <CheckBox fx:id="appleCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="204.0" text="Apple pay" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                        <GridPane.margin>
+                                            <Insets left="110.0" />
+                                        </GridPane.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="googleCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="86.0" text="Google Pay" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                        <GridPane.margin>
+                                            <Insets left="15.0" top="11.0" />
+                                        </GridPane.margin>
+                                    </CheckBox>
+                                    <CheckBox fx:id="giftCheck" mnemonicParsing="false" text="Gift Card" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                        <GridPane.margin>
+                                            <Insets left="110.0" top="11.0" />
+                                        </GridPane.margin>
+                                    </CheckBox>
+                                    <Label text="Gender" GridPane.rowIndex="1">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+
+                                    <RadioButton fx:id="maleRadio" mnemonicParsing="false" onAction="#handleGenderSelection" text="M" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                    <RadioButton fx:id="femaleRadio" mnemonicParsing="false" onAction="#handleGenderSelection" text="F" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <GridPane.margin>
+                                            <Insets left="85.0" />
+                                        </GridPane.margin>
+                                    </RadioButton>
+
+                                    <Label text="Phone Number:" GridPane.rowIndex="6">
+                                        <font>
+                                            <Font name="Monospaced Regular" size="16.0" />
+                                        </font>
+                                    </Label>
+                           <TextField fx:id="allergyField" promptText="Enter your Allergies" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <PasswordField fx:id="telField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           <TextField fx:id="nationalityField" promptText="Enter your nationality" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                </children>
+                                <HBox.margin>
+                                    <Insets bottom="35.0" left="50.0" right="50.0" top="20.0" />
+                                </HBox.margin>
+                            </GridPane>
+                        </children>
+                    </HBox>
+                    <HBox spacing="35.0">
+                        <Button onAction="#addClient" text="Add" textAlignment="CENTER" textFill="#1f127b">
+                            <padding>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="Elephant" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button onAction="#updateClient" text="Update" textFill="#1f127b">
+                            <padding>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="Elephant" size="15.0" />
+                            </font>
+                        </Button>
+                        <Button onAction="#deleteClient" text="Delete" textFill="#1f127b">
+                            <padding>
+                                <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
+                            </padding>
+                            <font>
+                                <Font name="Elephant" size="15.0" />
+                            </font>
+                        </Button>
+                        <VBox.margin>
+                            <Insets left="50.0" />
+                        </VBox.margin>
+                    </HBox>
+                </children>
+            </VBox>
+        </children>
+    </GridPane>
+    <HBox spacing="10" />
+    <Label fx:id="errorMsg" style="-fx-text-fill: red;" />
+</VBox>

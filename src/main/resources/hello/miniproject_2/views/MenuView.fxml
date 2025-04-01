@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="820.0" prefWidth="1095.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="548.0" minWidth="10.0" prefWidth="541.6000732421875" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="564.79990234375" minWidth="10.0" prefWidth="555.1999267578125" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints maxHeight="238.40003662109376" minHeight="10.0" prefHeight="212.8" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="348.0000427246094" minHeight="10.0" prefHeight="205.59999999999997" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="246.4000244140625" minHeight="10.0" prefHeight="144.99996948242188" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="384.5999633789063" minHeight="10.0" prefHeight="240.20003051757806" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="172.20004882812498" minHeight="0.0" prefHeight="89.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <Label contentDisplay="CENTER" prefHeight="76.0" prefWidth="145.0" text="Menu" textFill="#1f127b" GridPane.rowIndex="1">
+         <font>
+            <Font name="Tw Cen MT Condensed Extra Bold" size="68.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="140.0" left="170.0" top="50.0" />
+         </GridPane.margin>
+      </Label>
+      <ImageView fitHeight="197.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../image/ChefHoldingSpagueti.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="150.0" top="200.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="barbecueImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../image/barbecues.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="15.0" top="200.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="chickenImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+         <image>
+            <Image url="@../image/BigChicken.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="250.0" top="200.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="sushiImage" fitHeight="195.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+         <image>
+            <Image url="@../image/Sushi.png" />
+         </image>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="15.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="burgerImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+         <GridPane.margin>
+            <Insets bottom="5.0" left="500.0" top="200.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="@../image/BigBurger.png" />
+         </image>
+      </ImageView>
+      <Label text="Barbecue" GridPane.rowIndex="2">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="15.0" top="350.0" />
+         </GridPane.margin>
+      </Label>
+      <ImageView fx:id="cokeImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../image/cocacola.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="20.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="wineImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../image/wine.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="220.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="juiceImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <image>
+            <Image url="@../image/jus.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="400.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="cupcakesImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+         <image>
+            <Image url="@../image/Cupcakes.png" />
+         </image>
+         <GridPane.margin>
+            <Insets left="500.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="fishPlateImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="250.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="@../image/PlateFish.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="donutsImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="200.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="@../image/Donuts.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="iceCreamImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <GridPane.margin>
+            <Insets left="350.0" />
+         </GridPane.margin>
+         <image>
+            <Image url="@../image/IceCream.png" />
+         </image>
+      </ImageView>
+      <Label text="Chicken" GridPane.rowIndex="3">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="280.0" top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="       B" GridPane.rowIndex="3">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="400.0" top="25.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="urger" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Jus" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="150.0" left="400.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Sandwich" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Elephant" size="32.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="150.0" top="25.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="IceCream" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="100.0" left="350.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Donuts" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="100.0" left="180.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="pcakes" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="100.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Sushi" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="100.0" left="45.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="374.0" text="Fish Plate" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="100.0" left="250.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Wine" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="150.0" left="200.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="Pepsi" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="150.0" left="5.0" />
+         </GridPane.margin>
+      </Label>
+      <ImageView fx:id="sandwichImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <image>
+            <Image url="@../image/triangularSandwich.png" />
+         </image>
+         <GridPane.margin>
+            <Insets bottom="140.0" left="130.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="meatPlateImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <image>
+            <Image url="@../image/MeatPlate.png" />
+         </image>
+         <GridPane.margin>
+            <Insets bottom="150.0" left="370.0" />
+         </GridPane.margin>
+      </ImageView>
+      <Label prefHeight="56.0" prefWidth="170.0" text="      Cu" GridPane.rowIndex="5">
+         <font>
+            <Font name="Elephant" size="34.0" />
+         </font>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+         <GridPane.margin>
+            <Insets bottom="100.0" left="390.0" />
+         </GridPane.margin>
+      </Label>
+      <Label prefHeight="56.0" prefWidth="170.0" text="MeatPlate" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font name="Elephant" size="32.0" />
+         </font>
+         <GridPane.margin>
+            <Insets left="370.0" top="35.0" />
+         </GridPane.margin>
+      </Label>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" GridPane.rowIndex="2">
+         <font>
+            <Font name="Brush Script MT Italic" size="32.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="25.0" left="215.0" />
+         </GridPane.margin>
+      </Text>
+   </children>
+</GridPane>
