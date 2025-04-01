@@ -18,8 +18,12 @@ public class HomeController {
     }
 
     @FXML
-    private void openProductManagement() throws IOException {
-        showNotImplementedAlert("Product Management");
+    private void handleable2() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hello/miniproject_2/views/ProductView.fxml"));
+        Stage stage = new Stage();
+        stage.setTitle("Product Management");
+        stage.setScene(new Scene(loader.load()));
+        stage.show();
     }
 
     @FXML

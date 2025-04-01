@@ -19,10 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="632.0" prefWidth="975.0" spacing="10"
-      xmlns="http://javafx.com/javafx/23.0.1"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="hello.miniproject_2.Controllers.EmployeeController">
+<VBox alignment="CENTER" prefHeight="632.0" prefWidth="975.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hello.miniproject_2.Controllers.ProductController">
     <GridPane prefHeight="513.0" prefWidth="630.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,19 +31,19 @@
             <RowConstraints maxHeight="88.40000000000003" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
         </rowConstraints>
         <children>
-            <TableView fx:id="employeeTable" prefHeight="539.0" prefWidth="476.0" GridPane.columnIndex="1">
+            <TableView fx:id="productTable" prefHeight="539.0" prefWidth="476.0" GridPane.columnIndex="1">
                 <columns>
                     <TableColumn fx:id="idCol" prefWidth="52.79998779296875" text="ID" />
                     <TableColumn fx:id="nameCol" prefWidth="96.0" text="Name" />
-                    <TableColumn fx:id="genCol" prefWidth="47.199951171875" text="Gender" />
-                    <TableColumn fx:id="ageCol" prefWidth="73.5999755859375" text="Age" />
-                    <TableColumn fx:id="posCol" prefWidth="100.79998779296875" text="Position" />
-                    <TableColumn fx:id="salCol" minWidth="0.0" prefWidth="116.7999267578125" text="Salary" />
+                    <TableColumn fx:id="statusCol" prefWidth="47.199951171875" text="Status" />
+                    <TableColumn fx:id="durationCol" prefWidth="73.5999755859375" text="Duration" />
+                    <TableColumn fx:id="categoryCol" prefWidth="100.79998779296875" text="Category" />
+                    <TableColumn fx:id="priceCol" minWidth="0.0" prefWidth="116.7999267578125" text="Price" />
                 </columns>
             </TableView>
             <VBox prefHeight="521.0" prefWidth="504.0">
                 <children>
-                    <Label contentDisplay="CENTER" text="EMPLOYEE" textFill="#1f127b">
+                    <Label contentDisplay="CENTER" text="  Products" textFill="#1f127b">
                         <font>
                             <Font name="Tw Cen MT Condensed Extra Bold" size="53.0" />
                         </font>
@@ -59,7 +56,7 @@
                             <Insets bottom="30.0" left="140.0" top="10.0" />
                         </VBox.margin>
                         <image>
-                            <Image url="@../image/Restaurant-Chef-PNG-Free-Download.png" />
+                            <Image url="@../image/dish.png" />
                         </image>
                     </ImageView>
                     <HBox prefHeight="100.0" prefWidth="200.0">
@@ -79,7 +76,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                 </rowConstraints>
                                 <children>
-                                    <Label alignment="CENTER" text="ID:">
+                                    <Label alignment="CENTER" text="Item ID:">
                                         <font>
                                             <Font name="Monospaced Regular" size="16.0" />
                                         </font>
@@ -91,12 +88,12 @@
                                             <Font name="Monospaced Regular" size="16.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Age: " GridPane.rowIndex="3">
+                                    <Label prefHeight="19.0" prefWidth="208.0" text="Preparation duration:" GridPane.rowIndex="3">
                                         <font>
-                                            <Font name="Monospaced Regular" size="16.0" />
+                                            <Font name="Monospaced Regular" size="14.0" />
                                         </font>
                                     </Label>
-                                    <Label text="Position: " GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                    <Label text="Category:" GridPane.rowIndex="4" GridPane.rowSpan="2">
                                         <font>
                                             <Font name="Monospaced Regular" size="16.0" />
                                         </font>
@@ -104,55 +101,48 @@
                                             <Insets bottom="25.0" />
                                         </GridPane.margin>
                                     </Label>
-                                    <CheckBox fx:id="waiterCheck" mnemonicParsing="false" text="Waiter" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <CheckBox fx:id="chefCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="204.0" text="Chef" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <CheckBox fx:id="dessertCheck" mnemonicParsing="false" text="Dessert" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                    <CheckBox fx:id="saladCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="204.0" text="Salad" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                         <GridPane.margin>
                                             <Insets left="70.0" />
                                         </GridPane.margin>
                                     </CheckBox>
-                                    <CheckBox fx:id="managerCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="86.0" text="Manager" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                    <CheckBox fx:id="appetizerCheck" mnemonicParsing="false" prefHeight="18.0" prefWidth="106.0" text="Appetizers" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
                                         <GridPane.margin>
-                                            <Insets top="11.0" />
+                                            <Insets left="15.0" top="11.0" />
                                         </GridPane.margin>
-                                        <padding>
-                                            <Insets left="15.0" />
-                                        </padding>
                                     </CheckBox>
-                                    <CheckBox fx:id="hostCheck" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="Host" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <CheckBox fx:id="drinkCheck" mnemonicParsing="false" prefHeight="6.0" prefWidth="59.0" text="drink" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                         <GridPane.margin>
                                             <Insets left="130.0" />
                                         </GridPane.margin>
                                     </CheckBox>
-                                    <CheckBox fx:id="deliveryCheck" mnemonicParsing="false" text="Delivery" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
+                                    <CheckBox fx:id="seaCheck" mnemonicParsing="false" text="Seafood" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.rowSpan="2">
                                         <GridPane.margin>
-                                            <Insets left="95.0" top="11.0" />
+                                            <Insets left="100.0" top="11.0" />
                                         </GridPane.margin>
                                     </CheckBox>
-                                    <Spinner fx:id="ageSpinner" prefHeight="26.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <Label text="Gender" GridPane.rowIndex="2">
+                                    <Spinner fx:id="durationSpinner" prefHeight="26.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <Label text="Status:" GridPane.rowIndex="2">
                                         <font>
                                             <Font name="Monospaced Regular" size="16.0" />
                                         </font>
                                     </Label>
 
-                                    <RadioButton fx:id="maleRadio" mnemonicParsing="false" text="M"
-                                                 GridPane.columnIndex="1" GridPane.rowIndex="2"
-                                                 onAction="#handleGenderSelection"/>
+                                    <RadioButton fx:id="availableRadio" mnemonicParsing="false" onAction="#handleAvailabilitySelection" text="available" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                                    <RadioButton fx:id="femaleRadio" mnemonicParsing="false" text="F"
-                                                 GridPane.columnIndex="1" GridPane.rowIndex="2"
-                                                 onAction="#handleGenderSelection">
+                                    <RadioButton fx:id="unavailableRadio" mnemonicParsing="false" onAction="#handleAvailabilitySelection" text="unavailable" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                         <GridPane.margin>
                                             <Insets left="85.0" />
                                         </GridPane.margin>
                                     </RadioButton>
 
-                                    <Label text="Salary:" GridPane.rowIndex="6">
+                                    <Label text="Price" GridPane.rowIndex="6">
                                         <font>
                                             <Font name="Monospaced Regular" size="16.0" />
                                         </font>
                                     </Label>
-                                    <Slider fx:id="salSlider" blockIncrement="100.0" max="1000.0" min="100.0" value="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                    <Slider fx:id="priceSlider" blockIncrement="100.0" max="150.0" min="5.0" value="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                                 </children>
                                 <HBox.margin>
                                     <Insets bottom="35.0" left="50.0" right="50.0" top="20.0" />
@@ -161,7 +151,7 @@
                         </children>
                     </HBox>
                     <HBox spacing="35.0">
-                        <Button onAction="#addEmployee" text="Add" textAlignment="CENTER" textFill="#1f127b">
+                        <Button onAction="#addProduct" text="Add" textAlignment="CENTER" textFill="#1f127b">
                             <padding>
                                 <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
@@ -169,7 +159,7 @@
                                 <Font name="Elephant" size="15.0" />
                             </font>
                         </Button>
-                        <Button onAction="#updateEmployee" text="Update" textFill="#1f127b">
+                        <Button onAction="#updateProduct" text="Update" textFill="#1f127b">
                             <padding>
                                 <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>
@@ -177,7 +167,7 @@
                                 <Font name="Elephant" size="15.0" />
                             </font>
                         </Button>
-                        <Button onAction="#deleteEmployee" text="Delete" textFill="#1f127b">
+                        <Button onAction="#deleteProduct" text="Delete" textFill="#1f127b">
                             <padding>
                                 <Insets bottom="5.0" left="30.0" right="30.0" top="5.0" />
                             </padding>

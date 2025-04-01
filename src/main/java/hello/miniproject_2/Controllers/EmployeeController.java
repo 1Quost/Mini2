@@ -2,6 +2,7 @@ package hello.miniproject_2.Controllers;
 
 import hello.miniproject_2.Model.EmployeeModel;
 import hello.miniproject_2.Model.EmployeeStore;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -18,6 +19,18 @@ public class EmployeeController {
     @FXML private ToggleGroup genderGroup;
 
     private final EmployeeStore employeeStore = new EmployeeStore();
+
+
+    @FXML
+    private void handleGenderSelection(ActionEvent event) {
+        RadioButton selected = (RadioButton) event.getSource();
+        if (selected == maleRadio) {
+            femaleRadio.setSelected(false);
+        } else {
+            maleRadio.setSelected(false);
+        }
+    }
+
 
     @FXML
     public void initialize() {
@@ -49,8 +62,10 @@ public class EmployeeController {
                 // Set gender radio button
                 if (newVal.getGender().equals("M")) {
                     maleRadio.setSelected(true);
+                    femaleRadio.setSelected(false);
                 } else {
                     femaleRadio.setSelected(true);
+                    maleRadio.setSelected(false);
                 }
 
                 // Set position checkboxes
@@ -69,14 +84,15 @@ public class EmployeeController {
         try {
             String position = getSelectedPosition();
             if (position.isEmpty()) {
-                errorMsg.setText("Please select a position!");
+                errorMsg.setText("              Please select a position!");
                 return;
             }
 
             if (idField.getText().isEmpty() || nameField.getText().isEmpty()) {
-                errorMsg.setText("ID and Name are required!");
+                errorMsg.setText("                ID and Name are required!");
                 return;
             }
+
 
             String gender = maleRadio.isSelected() ? "M" : "F";
             EmployeeModel emp = new EmployeeModel(
@@ -102,7 +118,7 @@ public class EmployeeController {
             try {
                 String position = getSelectedPosition();
                 if (position.isEmpty()) {
-                    errorMsg.setText("Please select a position!");
+                    errorMsg.setText("         Please select a position!");
                     return;
                 }
 
@@ -119,7 +135,7 @@ public class EmployeeController {
                 errorMsg.setText("Error updating employee: " + e.getMessage());
             }
         } else {
-            errorMsg.setText("Please select an employee to update!");
+            errorMsg.setText("                                   Please select an employee to update!");
         }
     }
 
@@ -130,7 +146,7 @@ public class EmployeeController {
             employeeStore.deleteEmployee(selected);
             clearFields();
         } else {
-            errorMsg.setText("Please select an employee to delete!");
+            errorMsg.setText("                                   Please select an employee to delete!");
         }
     }
 

@@ -45,7 +45,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="11.0" layoutY="107.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="273.0" text="Product  Management" textFill="#3f0a84">
+                <Button layoutX="11.0" layoutY="107.0" mnemonicParsing="false" onAction="#handleable2" prefHeight="43.0" prefWidth="273.0" text="Product  Management" textFill="#3f0a84">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -53,7 +53,7 @@
                         <Font size="16.0" />
                     </font>
                 </Button>
-                <Button layoutX="11.0" layoutY="322.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="273.0" text="? Management" textFill="#3f0a84">
+                <Button layoutX="11.0" layoutY="322.0" mnemonicParsing="false"  prefHeight="43.0" prefWidth="273.0" text="? Management" textFill="#3f0a84">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
