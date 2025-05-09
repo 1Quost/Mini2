@@ -37,11 +37,15 @@ To run the project:
 4. Run the `Main` class to start the app.
 
 ## 📷 Screenshots
+Pictures of the project:
+
 
 Login (admin only):
+
 ![image](https://github.com/user-attachments/assets/af39faf0-053e-440e-9420-6934b0cb2366)
 
 choosing the entity:
+
 ![image](https://github.com/user-attachments/assets/44c33d26-00ff-4579-ac51-ec59f80ec88f)
 
 Employee:
@@ -58,6 +62,7 @@ Reservation:
 
 Menu:
 ![image](https://github.com/user-attachments/assets/55a02ef9-a5e0-4eae-817e-7b17991fe477)
+
 
 
 
