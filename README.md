@@ -34,8 +34,7 @@ To run the project:
    ```
 2. Open the project in your IDE (e.g., IntelliJ, Eclipse).
 3. Ensure JavaFX or required libraries are set up.
-4. If using a database, import the `.sql` file and update connection settings.
-5. Run the `Main` class to start the app.
+4. Run the `Main` class to start the app.
 
 ## 📷 Screenshots
 
